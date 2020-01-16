@@ -10,8 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var myFabulousLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.myFabulousLabel.text = "Hello World!"
         // Do any additional setup after loading the view, typically from a nib.
     }
 

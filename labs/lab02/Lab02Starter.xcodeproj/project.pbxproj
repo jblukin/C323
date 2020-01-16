@@ -56,9 +56,9 @@
 			children = (
 				C580A0B321E692D500D16000 /* AppDelegate.swift */,
 				C580A0B521E692D500D16000 /* ViewController.swift */,
+				C580A0BC21E692D700D16000 /* LaunchScreen.storyboard */,
 				C580A0B721E692D600D16000 /* Main.storyboard */,
 				C580A0BA21E692D700D16000 /* Assets.xcassets */,
-				C580A0BC21E692D700D16000 /* LaunchScreen.storyboard */,
 				C580A0BF21E692D700D16000 /* Info.plist */,
 			);
 			path = Lab02Starter;
