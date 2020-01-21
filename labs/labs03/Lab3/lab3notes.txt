@@ -1,0 +1,7 @@
+Blue flashes when the app opens/ as it enters the foreground (sceneWillEnterForeground)
+
+Green stays once the app has fully opened across the screen (sceneDidBecomeActive)
+
+Orange stays when you open the app in the background of the phone/open the multi-app viewer (sceneDidEnterBackground)
+
+Brown flashes when the app fully closes on a single home button press (sceneWillResignActive)
