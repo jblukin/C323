@@ -22,7 +22,7 @@ class Lab4ViewController: UIViewController {
     
     @IBAction func showQuestion(_ sender: Any) {
         
-		questionLabel.text = model.getNextQuestion()
+		questionLabel.text = self.model.getNextQuestion()
         answerLabel.text = "Try Guessing..."
         
         flag = true
@@ -32,7 +32,7 @@ class Lab4ViewController: UIViewController {
     @IBAction func showAnswer(_ sender: Any) {
         
         if(flag) {
-			answerLabel.text = model.getAnswer()
+			answerLabel.text = self.model.getAnswer()
         }
         
     }
