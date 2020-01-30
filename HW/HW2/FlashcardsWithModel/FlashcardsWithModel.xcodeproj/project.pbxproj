@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D339F17D23E3688000FF7057 /* FlashcardsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D339F17C23E3688000FF7057 /* FlashcardsModel.swift */; };
+		D339F17F23E36E1200FF7057 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D339F17E23E36E1200FF7057 /* Default-568h@2x.png */; };
 		D35E741523DA444C00437AD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35E741423DA444C00437AD7 /* AppDelegate.swift */; };
 		D35E741723DA444C00437AD7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35E741623DA444C00437AD7 /* SceneDelegate.swift */; };
 		D35E741923DA444C00437AD7 /* Lab4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35E741823DA444C00437AD7 /* Lab4ViewController.swift */; };
@@ -16,7 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D35E741123DA444C00437AD7 /* Flashcards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flashcards.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D339F17C23E3688000FF7057 /* FlashcardsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardsModel.swift; sourceTree = "<group>"; };
+		D339F17E23E36E1200FF7057 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		D35E741123DA444C00437AD7 /* FlashcardsWithModel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashcardsWithModel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D35E741423DA444C00437AD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D35E741623DA444C00437AD7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D35E741823DA444C00437AD7 /* Lab4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lab4ViewController.swift; sourceTree = "<group>"; };
@@ -40,7 +44,8 @@
 		D35E740823DA444C00437AD7 = {
 			isa = PBXGroup;
 			children = (
-				D35E741323DA444C00437AD7 /* Flashcards */,
+				D339F17E23E36E1200FF7057 /* Default-568h@2x.png */,
+				D35E741323DA444C00437AD7 /* FlashcardsWithModel */,
 				D35E741223DA444C00437AD7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,12 +53,12 @@
 		D35E741223DA444C00437AD7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D35E741123DA444C00437AD7 /* Flashcards.app */,
+				D35E741123DA444C00437AD7 /* FlashcardsWithModel.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D35E741323DA444C00437AD7 /* Flashcards */ = {
+		D35E741323DA444C00437AD7 /* FlashcardsWithModel */ = {
 			isa = PBXGroup;
 			children = (
 				D35E741423DA444C00437AD7 /* AppDelegate.swift */,
@@ -63,16 +68,17 @@
 				D35E741D23DA445000437AD7 /* Assets.xcassets */,
 				D35E741F23DA445000437AD7 /* LaunchScreen.storyboard */,
 				D35E742223DA445000437AD7 /* Info.plist */,
+				D339F17C23E3688000FF7057 /* FlashcardsModel.swift */,
 			);
-			path = Flashcards;
+			path = FlashcardsWithModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D35E741023DA444C00437AD7 /* Flashcards */ = {
+		D35E741023DA444C00437AD7 /* FlashcardsWithModel */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D35E742523DA445000437AD7 /* Build configuration list for PBXNativeTarget "Flashcards" */;
+			buildConfigurationList = D35E742523DA445000437AD7 /* Build configuration list for PBXNativeTarget "FlashcardsWithModel" */;
 			buildPhases = (
 				D35E740D23DA444C00437AD7 /* Sources */,
 				D35E740E23DA444C00437AD7 /* Frameworks */,
@@ -82,9 +88,9 @@
 			);
 			dependencies = (
 			);
-			name = Flashcards;
+			name = FlashcardsWithModel;
 			productName = Flashcards;
-			productReference = D35E741123DA444C00437AD7 /* Flashcards.app */;
+			productReference = D35E741123DA444C00437AD7 /* FlashcardsWithModel.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -102,7 +108,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D35E740C23DA444C00437AD7 /* Build configuration list for PBXProject "Flashcards" */;
+			buildConfigurationList = D35E740C23DA444C00437AD7 /* Build configuration list for PBXProject "FlashcardsWithModel" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -115,7 +121,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D35E741023DA444C00437AD7 /* Flashcards */,
+				D35E741023DA444C00437AD7 /* FlashcardsWithModel */,
 			);
 		};
 /* End PBXProject section */
@@ -126,6 +132,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D35E742123DA445000437AD7 /* LaunchScreen.storyboard in Resources */,
+				D339F17F23E36E1200FF7057 /* Default-568h@2x.png in Resources */,
 				D35E741E23DA445000437AD7 /* Assets.xcassets in Resources */,
 				D35E741C23DA444C00437AD7 /* Main.storyboard in Resources */,
 			);
@@ -138,6 +145,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D339F17D23E3688000FF7057 /* FlashcardsModel.swift in Sources */,
 				D35E741923DA444C00437AD7 /* Lab4ViewController.swift in Sources */,
 				D35E741523DA444C00437AD7 /* AppDelegate.swift in Sources */,
 				D35E741723DA444C00437AD7 /* SceneDelegate.swift in Sources */,
@@ -285,13 +293,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Flashcards/Info.plist;
+				INFOPLIST_FILE = FlashcardsWithModel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "edu.indiana.cs.c323.c323-jlukin.Flashcards";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.indiana.cs.c323.c323-jlukin.FlashcardsWithModel";
+				PRODUCT_NAME = FlashcardsWithModel;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -302,13 +310,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Flashcards/Info.plist;
+				INFOPLIST_FILE = FlashcardsWithModel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "edu.indiana.cs.c323.c323-jlukin.Flashcards";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.indiana.cs.c323.c323-jlukin.FlashcardsWithModel";
+				PRODUCT_NAME = FlashcardsWithModel;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -317,7 +325,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D35E740C23DA444C00437AD7 /* Build configuration list for PBXProject "Flashcards" */ = {
+		D35E740C23DA444C00437AD7 /* Build configuration list for PBXProject "FlashcardsWithModel" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D35E742323DA445000437AD7 /* Debug */,
@@ -326,7 +334,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D35E742523DA445000437AD7 /* Build configuration list for PBXNativeTarget "Flashcards" */ = {
+		D35E742523DA445000437AD7 /* Build configuration list for PBXNativeTarget "FlashcardsWithModel" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D35E742623DA445000437AD7 /* Debug */,
