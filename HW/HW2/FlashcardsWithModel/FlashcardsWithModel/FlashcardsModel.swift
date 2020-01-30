@@ -12,7 +12,7 @@ class FlashcardsModel {
 	
 	var currentQuestionIndex = -1
 	
-	var questions = ["How much is 7+7?", "In what country is Timbuktu", "What rotates when you ride a bike?", "Who was the 44th President of the US?", "Solve for x: 2x - 1 = 5", "Wheat animal is it the year of in the Chinese Calendar? (2020)"]
+	var questions = ["How much is 7+7?", "In what country is Timbuktu?", "What rotates when you ride a bike?", "Who was the 44th President of the US?", "Solve for x: 2x - 1 = 5", "Wheat animal is it the year of in the Chinese Calendar? (2020)"]
 	
 	var answers = ["14", "Mali", "Wheels", "Barack Obama", "x = 2", "Year of the Rat"]
 	
