@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  BinaryCalculator
 //
-//  Created by Jonah Lukin on 2/7/20.
+//  Created by Jonah Lukin (jlukin@iu.edu) on 2/7/20.
 //  Copyright © 2020 C323 / Spring2020. All rights reserved.
 //
 
@@ -21,9 +21,19 @@ class ViewController: UIViewController {
 	@IBOutlet weak var zeroButton: UIButton!
 	@IBOutlet weak var oneButton: UIButton!
 	
-	var firstNum = ""
-	var secondNum = ""
-	var function = ""
+	@IBOutlet weak var clearButton: UIButton!
+	@IBOutlet weak var posNegButton: UIButton!
+	
+	
+	@IBOutlet weak var memoryClearButton: UIButton!
+	@IBOutlet weak var memoryRecallButton: UIButton!
+	@IBOutlet weak var memoryAddButton: UIButton!
+	@IBOutlet weak var memorySubtractButton: UIButton!
+	
+	var firstNum = " "
+	var secondNum = " "
+	var function = " "
+	var memoryNum = "0"
 	
 	let model = CalculatorModel()
 	
@@ -32,6 +42,10 @@ class ViewController: UIViewController {
 		if(self.answerField.text == "0") {
 			
 			self.answerField.text = "1"
+			
+		} else if(self.answerField.text!.contains("-0")) {
+			
+			self.answerField.text = "-1"
 			
 		} else {
 			
@@ -42,7 +56,7 @@ class ViewController: UIViewController {
 	
 	@IBAction func zeroPressed() {
 		
-		if(self.answerField.text!.first == "1") {
+		if(self.answerField.text!.first == "1" || self.answerField.text!.contains("-1")) {
 			
 			self.answerField.text = self.answerField.text! + "0"
 			
@@ -52,13 +66,19 @@ class ViewController: UIViewController {
 	
 	@IBAction func addPressed() {
 		
-		if(firstNum != "") {
+		if(self.firstNum.contains(" ")) {
 			
-			firstNum = self.answerField.text!
+			self.firstNum = self.answerField.text!
+			
+		} else if(self.secondNum.contains(" ")) {
+			
+			self.secondNum = self.answerField.text!
 			
 		} else {
 			
-			secondNum = self.answerField.text!
+			self.firstNum = self.answerField.text!
+			
+			self.secondNum = " "
 			
 		}
 		
@@ -70,13 +90,19 @@ class ViewController: UIViewController {
 	
 	@IBAction func minusPressed() {
 		
-		if(firstNum != "") {
+		if(self.firstNum.contains(" ")) {
 			
-			firstNum = self.answerField.text!
+			self.firstNum = self.answerField.text!
+			
+		} else if(self.secondNum.contains(" ")) {
+			
+			self.secondNum = self.answerField.text!
 			
 		} else {
 			
-			secondNum = self.answerField.text!
+			self.firstNum = self.answerField.text!
+			
+			self.secondNum = " "
 			
 		}
 		
@@ -88,13 +114,19 @@ class ViewController: UIViewController {
 	
 	@IBAction func divisionPressed() {
 		
-		if(firstNum != "") {
+		if(self.firstNum.contains(" ")) {
 			
-			firstNum = self.answerField.text!
+			self.firstNum = self.answerField.text!
+			
+		}else if(self.secondNum.contains(" ")) {
+			
+			self.secondNum = self.answerField.text!
 			
 		} else {
 			
-			secondNum = self.answerField.text!
+			self.firstNum = self.answerField.text!
+			
+			self.secondNum = " "
 			
 		}
 		
@@ -106,13 +138,19 @@ class ViewController: UIViewController {
 	
 	@IBAction func timesPressed() {
 		
-		if(firstNum != "") {
+		if(self.firstNum.contains(" ")) {
 			
-			firstNum = self.answerField.text!
+			self.firstNum = self.answerField.text!
+			
+		} else if(self.secondNum.contains(" ")) {
+			
+			self.secondNum = self.answerField.text!
 			
 		} else {
 			
-			secondNum = self.answerField.text!
+			self.firstNum = self.answerField.text!
+			
+			self.secondNum = " "
 			
 		}
 		
@@ -124,7 +162,64 @@ class ViewController: UIViewController {
 	
 	@IBAction func equalsPressed() {
 		
-		self.answerField.text = model.solve(firstNum, secondNum, function)
+		if(self.secondNum.contains(" ")) {
+			
+			self.secondNum = self.answerField.text!
+			
+		}
+	
+		self.answerField.text = self.model.solve(self.firstNum, self.secondNum, self.function)
+		
+	}
+	
+	@IBAction func clear() {
+		
+		self.firstNum = " "
+		
+		self.secondNum = " "
+		
+		self.answerField.text = "0"
+		
+	}
+	
+	@IBAction func posNegSwitch() {
+		
+		var string = self.answerField.text!
+	 if(self.answerField.text!.contains("-")) {
+			
+			string = String(string.dropFirst())
+			
+		self.answerField.text = string
+		
+	} else {
+		
+		self.answerField.text = "-" + self.answerField.text!
+		
+		}
+		
+	}
+	
+	@IBAction func memoryClear() {
+		
+		self.memoryNum = "0"
+		
+	}
+	
+	@IBAction func memoryRecall() {
+		
+		self.answerField.text = self.memoryNum
+		
+	}
+	
+	@IBAction func memoryAdd() {
+		
+		self.memoryNum = self.model.solve(self.memoryNum, self.answerField.text!, "+")
+		
+	}
+	
+	@IBAction func memorySubtract() {
+		
+		self.memoryNum = self.model.solve(self.memoryNum, self.answerField.text!, "-")
 		
 	}
 	

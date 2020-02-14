@@ -2,7 +2,7 @@
 //  CalculatorModel.swift
 //  BinaryCalculator
 //
-//  Created by Jonah Lukin on 2/7/20.
+//  Created by Jonah Lukin (jlukin@iu.edu) on 2/7/20.
 //  Copyright © 2020 C323 / Spring2020. All rights reserved.
 //
 
@@ -18,149 +18,124 @@ class CalculatorModel {
 		
 		var converted = ""
 		
-		if(function == "+") {
+		var firstC = 0
+		
+		var secondC = 0
+		
+		var power = 0
+		
+		var firstNeg = false
+		
+		var secondNeg = false
+		
+		var finalNeg = false
+		
+		var firstNum = first
+		
+		var secondNum = second
+		
+		if(first.contains("-")) {
 			
-			ans = add(first, second)
+			firstNeg = true
 			
-		} else if(function == "x") {
-			
-			ans = multiply(first, second)
-			
-		} else if(function == "-") {
-			
-			ans = minus(first, second)
-			
-		} else if(function == "/") {
-			
-			ans = divide(first, second)
+			firstNum = String(first.dropFirst())
 			
 		}
 		
-		for _ in 0...ans.bitWidth {
+		if(second.contains("-")) {
 			
-			count+=1
+			secondNeg = true
 			
-			if((ans-(2^(ans.bitWidth - count))) >= 0) {
+			secondNum = String(second.dropFirst())
+			
+		}
+		
+		count = firstNum.count-1
+
+		for i in firstNum {
+			
+			power = Int(pow(Double(2), Double(count)))
+			
+			firstC += (power * i.wholeNumberValue!)
+			
+			count-=1
+			
+		}
+		
+		count = secondNum.count-1
+		
+		for i in secondNum {
+			
+			power = Int(pow(Double(2), Double(count)))
 				
-				converted += "1"
+				secondC += (power * i.wholeNumberValue!)
+			
+			count-=1
+			
+		}
+		
+		if(firstNeg) {
+			
+			firstC = firstC - (2*firstC)
+			
+		}
+		
+		if(secondNeg) {
+			
+			secondC = secondC - (2*secondC)
+			
+		}
+		
+		if(function.contains("+")) {
+			
+			ans = firstC + secondC
+			
+		} else if(function.contains("x")) {
+			
+			ans = firstC * secondC
+			
+		} else if(function.contains("-")) {
+			
+			ans = firstC - secondC
+			
+		} else if(function.contains("/")) {
+			
+			if(secondC != 0) {
 				
-				ans = ans-(2^(ans.bitWidth - count))
-				
-			} else if(converted.first != "0"){
-				
-				converted += "0"
+			ans = firstC / secondC
 				
 			}
+			
+		}
 		
-	}
+		if(ans < 0) {
+			
+			ans = ans + (ans*2)
+			
+			finalNeg = true
+		}
+		
+		while(ans > 0) {
+			
+			converted = String(ans%2) + converted
+			
+			ans = ans/2
+		}
+		
+		if(converted.count == 0) {
+			
+			converted = "0"
+			
+		}
+		
+		if(finalNeg) {
+			
+			converted = "-" + converted
+			
+		}
+		
 		return converted
 		
 	}
-	
-	func add(_ first:String, _ second:String) -> Int {
-		
-		var count = 0
-		
-		var ans = 0
-		
-		for i in first {
-			
-			count+=1
-			 ans += (i.wholeNumberValue!)*(2^first.count-count)
-			
-		}
-		
-		count = 0
-		
-		for i in second {
-			
-			count+=1
-			ans += (i.wholeNumberValue!)*(2^first.count-count)
-			
-		}
-		
-		return ans
-		
-	}
-	
-	func multiply(_ first:String, _ second:String) -> Int {
-		
-		var count = 0
-		
-		var numOne = 0
-		var numTwo = 0
-		
-		for i in first {
-			
-			count+=1
-			 numOne += (i.wholeNumberValue!)*(2^first.count-count)
-			
-		}
-		
-		count = 0
-		
-		for i in second {
-			
-			count+=1
-			numTwo += (i.wholeNumberValue!)*(2^first.count-count)
-			
-		}
-		
-		return (numOne*numTwo)
-		
-	}
-	
-	func minus(_ first:String, _ second:String) -> Int {
-		
-		var count = 0
-		
-		var numOne = 0
-		var numTwo = 0
-		
-		for i in first {
-			
-			count+=1
-			 numOne += (i.wholeNumberValue!)*(2^first.count-count)
-			
-		}
-		
-		count = 0
-		
-		for i in second {
-			
-			count+=1
-			numTwo += (i.wholeNumberValue!)*(2^first.count-count)
-			
-		}
-		
-		return (numOne-numTwo)
-		
-	}
-	
-	func divide(_ first:String, _ second:String) -> Int {
-		
-		var count = 0
-		
-		var numOne = 0
-		var numTwo = 0
-		
-		for i in first {
-			
-			count+=1
-			 numOne += (i.wholeNumberValue!)*(2^first.count-count)
-			
-		}
-		
-		count = 0
-		
-		for i in second {
-			
-			count+=1
-			numTwo += (i.wholeNumberValue!)*(2^first.count-count)
-			
-		}
-		
-		return (numOne/numTwo)
-		
-	}
+
 }
