@@ -26,12 +26,12 @@ class TableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 13
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 10
+        return 13
     }
 
     
@@ -40,9 +40,7 @@ class TableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
 
         // Configure the cell...
-		cell.textLabel?.text = "Hello! This is cell \(self.num)"
-		
-		num+=1
+		cell.textLabel?.text = " \(indexPath.section*indexPath.row) This is \(indexPath.section) * \(indexPath.row)"
 		
         return cell
     }
